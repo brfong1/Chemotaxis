@@ -10,21 +10,15 @@ void setup()
 }   
 void draw()   
 { 
-  for (int myY = 0; myY < 300; myY = myY + 20)
-  {
-    for (int myX = 0; myX < 300; myX = myX + 20)
-    {
       for (int i = 0; i < bob.length; i++)
       {
         bob[i].show();
         bob[i].move();
       }
-    }
-  }
 }
 class Bacteria    
 {     
-  int myX, myY;
+  int myX, myY, direction, num;
   Bacteria()
   {
     myX = (int)(Math.random()*270 + 30);
@@ -36,7 +30,18 @@ class Bacteria
   }
   void move()
   {
-    int xmove = myX + (int)((Math.random()*2) -2);
-    int ymove = myY + (int)((Math.random()*2) -2);
+  	for(int num = 0; num <= 3; num++)
+  	{
+  		direction = (int)(Math.random()*3);
+  		if (direction = num)
+  		{
+  			//i still dont knowww
+  		}
+
+  	}
+
+
+    myX = myX + (int)((Math.random()*2) -2);
+    myY = myY + (int)((Math.random()*2) -2);
   }
 }    
