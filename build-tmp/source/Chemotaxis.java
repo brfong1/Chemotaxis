@@ -17,16 +17,16 @@ public class Chemotaxis extends PApplet {
 Bacteria [] bob;
 public void setup()   
 { 
-  size(300, 300);
+  size(500, 500);
   frameRate(30);
-  bob = new Bacteria[10];
+  bob = new Bacteria[1000];
   for (int i = 0; i < bob.length; i++)
   {
     bob[i] = new Bacteria();
   }
 }   
 public void draw()   
-{ background(0);
+{ background((int)(Math.random()*255));
       for (int i = 0; i < bob.length; i++)
       {
         bob[i].show();
@@ -38,15 +38,15 @@ class Bacteria
   int myX, myY, direction, num;
   Bacteria()
   {
-    myX = (int)(Math.random()*200 + 50);
-    myY = (int)(Math.random()*200 + 50);
+    myX = (int)(Math.random()*500);
+    myY = (int)(Math.random()*500);
   }
   public void show()
   { int r = (int)(Math.random()*255);
   	int g = (int)(Math.random()*255);
   	int b = (int)(Math.random()*255);
   	fill(r,g,b,127);
-    ellipse(myX, myY, 10, 10);
+    ellipse(myX, myY, 15, 15);
   }
   public void move()
   {
