@@ -2,6 +2,7 @@ Bacteria [] bob;
 void setup()   
 { 
   size(300, 300);
+  frameRate(30);
   bob = new Bacteria[10];
   for (int i = 0; i < bob.length; i++)
   {
@@ -9,7 +10,7 @@ void setup()
   }
 }   
 void draw()   
-{ 
+{ background(0);
       for (int i = 0; i < bob.length; i++)
       {
         bob[i].show();
@@ -21,27 +22,28 @@ class Bacteria
   int myX, myY, direction, num;
   Bacteria()
   {
-    myX = (int)(Math.random()*270 + 30);
-    myY = (int)(Math.random()*270 + 30);
+    myX = (int)(Math.random()*200 + 50);
+    myY = (int)(Math.random()*200 + 50);
   }
   void show()
-  {
-    ellipse(myX, myY, 20, 20);
+  { int r = (int)(Math.random()*255);
+  	int g = (int)(Math.random()*255);
+  	int b = (int)(Math.random()*255);
+  	fill(r,g,b,127);
+    ellipse(myX, myY, 10, 10);
   }
   void move()
   {
-  	for(int num = 0; num <= 3; num++)
-  	{
-  		direction = (int)(Math.random()*3);
-  		if (direction = num)
-  		{
-  			//i still dont knowww
-  		}
-
-  	}
-
-
-    myX = myX + (int)((Math.random()*2) -2);
-    myY = myY + (int)((Math.random()*2) -2);
+  		direction = (int)(Math.random()*4);
+  		if (direction == 0) //up
+  		   myY = myY - (int)(Math.random()*3);
+  		else if(direction == 1) //down
+  			myY = myY + (int)(Math.random()*3);
+        else if(direction == 2) //left
+        	myX = myX - (int)(Math.random()*3);
+        else//right
+        	myX = myX + (int)(Math.random()*3);
+    // myX = myX + (int)((Math.random()*2) -2);
+    // myY = myY + (int)((Math.random()*2) -2);
   }
 }    
