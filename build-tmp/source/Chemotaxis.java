@@ -18,7 +18,7 @@ Bacteria [] bob;
 public void setup()   
 { 
   size(500, 500);
-  frameRate(30);
+  frameRate(20);
   bob = new Bacteria[1000];
   for (int i = 0; i < bob.length; i++)
   {
@@ -26,7 +26,7 @@ public void setup()
   }
 }   
 public void draw()   
-{ background((int)(Math.random()*255));
+{ background(0);
       for (int i = 0; i < bob.length; i++)
       {
         bob[i].show();
@@ -38,11 +38,13 @@ class Bacteria
   int myX, myY, direction, num;
   Bacteria()
   {
-    myX = (int)(Math.random()*500);
-    myY = (int)(Math.random()*500);
-  }
+    myX = (int)(Math.random()*480) + 10;
+    myY = (int)(Math.random()*480) + 10;
+  } 
   public void show()
-  { int r = (int)(Math.random()*255);
+  { 
+  	noStroke();
+  	int r = (int)(Math.random()*255);
   	int g = (int)(Math.random()*255);
   	int b = (int)(Math.random()*255);
   	fill(r,g,b,127);
